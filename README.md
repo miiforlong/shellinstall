@@ -1,3 +1,3 @@
 # shellinstall
 
-with this project you will be able to install any shell app with an simple UI by just searching and clicking on the app you need
+This is the website code, you can use it if you want but it is useless to do this...
