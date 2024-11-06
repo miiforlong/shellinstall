@@ -1,0 +1,175 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+
+/* Animation du fond */
+@keyframes moveShapes {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(500px, 500px);
+    }
+}
+
+/* Fond flou */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    filter: blur(10px);
+    z-index: -1;
+    animation: moveShapes 20s ease infinite;
+}
+
+/* Conteneur principal */
+.container {
+    width: 80%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    backdrop-filter: blur(15px); /* Applique le flou au fond */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* En-tête */
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #00f8ff;
+    margin-bottom: 10px;
+    animation: colorShift 3s ease-in-out infinite;
+}
+
+header p {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Carte de contenu */
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Applique le flou au fond de la carte */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Agrandit la carte au survol */
+}
+
+.card h2 {
+    color: #00f8ff;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #d3d3d3;
+}
+
+/* Bouton de téléchargement */
+.download-button {
+    background-color: #00f8ff;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #007b8b;
+    transform: translateY(-5px); /* Effet de levée du bouton */
+}
+
+/* Pied de page */
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Animation de changement de couleur futuriste */
+@keyframes colorShift {
+    0% {
+        color: #00f8ff;
+    }
+    50% {
+        color: #ff00ff;
+    }
+    100% {
+        color: #00f8ff;
+    }
+}
+
+/* Formes animées */
+.shape {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: shapeMovement 15s ease-in-out infinite;
+}
+
+.shape:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+    top: 60%;
+    left: 70%;
+    animation-delay: 5s;
+}
+
+.shape:nth-child(3) {
+    top: 50%;
+    left: 30%;
+    animation-delay: 10s;
+}
+
+@keyframes shapeMovement {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(400px, 400px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
